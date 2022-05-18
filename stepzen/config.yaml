@@ -1,0 +1,4 @@
+configurationset:
+  - configuration:
+      name: postgresql_config
+      uri: postgresql://postgres:PavanDas@1996@db.lnwsawzvfqpboilzwxhn.supabase.co/postgres

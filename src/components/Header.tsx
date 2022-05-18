@@ -35,13 +35,13 @@ const Header: React.FC = () => {
         </div>
 
         {/* SEARCH */}
-        <div className="bg-gray-100 flex-1 p-1 px-3 rounded-md">
+        <div className="bg-gray-100 border border-gray-200 flex-1 p-1 px-3 rounded-md">
           <div className="flex items-center space-x-2">
             <SearchIcon className="h-6 text-gray-500" />
             <input
               type="text"
               placeholder="Search Reddit"
-              className=" bg-transparent border border-gray-200 w-full outline-none px-2 font-semibold text-sm"
+              className=" bg-transparent  w-full outline-none px-2 font-semibold text-sm"
             />
           </div>
         </div>
@@ -73,7 +73,6 @@ const Header: React.FC = () => {
             />
             <div className="flex-1">
               <p className="truncate text-sm">{session?.user?.name}</p>
-              <p className="hidden lg:inline-flex text-xs">Sign out</p>
             </div>
           </div>
         ) : (
