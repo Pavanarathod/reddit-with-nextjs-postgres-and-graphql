@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["https://links.papareact.com/fqy"],
+    domains: ["https://links.papareact.com/fqy", "avatars.dicebear.com"],
   },
 };
 
