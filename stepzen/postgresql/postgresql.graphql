@@ -88,7 +88,7 @@ type Query {
     @dbquery(
       type: "postgresql"
       query: """
-
+      select * from "subreddit" where "topic" = $1
       """
       configuration: "postgresql_config"
     )
@@ -120,6 +120,14 @@ type Mutation {
   """
   In this mutation example you can see how to do a mutation to delete data from the database.
   """
+  insertSubreddit(topic: String!): Subreddit
+    @dbquery(
+      type: "postgresql"
+      table: "post"
+      dml: INSERT
+      configuration: "postgresql_config"
+    )
+
   deletePost(
     image: String!
     id: ID!

@@ -25,3 +25,13 @@ export const ADD_POST = gql`
     }
   }
 `;
+
+export const ADD_SUBREDDIT = gql`
+  mutation MyMutation($topic: String!) {
+    insertSubreddit(topic: $topic) {
+      id
+      topic
+      created_at
+    }
+  }
+`;
