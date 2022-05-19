@@ -8,6 +8,8 @@ import { useSession } from "next-auth/react";
 import React, { useState } from "react";
 import Avatar from "./Avatar";
 import { useForm } from "react-hook-form";
+import { useMutation } from "@apollo/client";
+import { ADD_POST } from "../graphql/mutation";
 
 type FormData = {
   postTitle: string;
@@ -18,6 +20,7 @@ type FormData = {
 
 const PostBox: React.FC = () => {
   const { data: session } = useSession();
+  const [addPost] = useMutation(ADD_POST);
   const [selectImage, setSelectImage] = useState<boolean>(false);
   const {
     register,
@@ -101,11 +104,10 @@ const PostBox: React.FC = () => {
           {Object.keys(errors).length > 0 && (
             <div className="space-y-2 p-2 text-red-500">
               {errors.postTitle?.type === "required" && (
-                <p>A Post Title is required</p>
+                <p className="font-semibold">A Post Title is required</p>
               )}
-
               {errors.subreddit?.type === "required" && (
-                <p>A subreddit is required</p>
+                <p className="font-semibold">A subreddit is required</p>
               )}
             </div>
           )}
